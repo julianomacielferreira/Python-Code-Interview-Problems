@@ -5,7 +5,7 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 ## Problems
 
 1) [Valid Anagram](./src/valid-anagram.ipynb)
-2) [First and Last position](./src/first-and-last-position.ipynb)
+2) [Find First and Last Position](./src/first-and-last-position.ipynb)
 
 
 ## References
