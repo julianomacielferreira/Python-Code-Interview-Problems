@@ -2,6 +2,8 @@
 
 Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Common Coding Interview Questions](https://www.youtube.com/watch?v=Peq4GCPNC5c) from [freeCodeCamp.org](https://www.youtube.com/@freecodecamp) youtube channel.
 
+![](assets/img/video.jpg)
+
 ## Problems
 
 1) [Valid Anagram](./src/valid-anagram.ipynb)
