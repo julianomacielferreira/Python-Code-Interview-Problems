@@ -172,3 +172,33 @@ for key in words:
     )
 
 ```
+
+A fourth [solution](valid_anagram_v4.py):
+
+```python
+def is_anagram_v4(word_a, word_b):
+    """
+        Verify if two string are anagram
+
+        Params:
+            word_a (str): First word to compare
+            word_b (str): Second word to compare
+
+        Returns:
+            True if they are anagrams, False otherwise
+    """
+    # Check the lengths
+    if len(word_a) != len(word_b):
+        return False
+
+    return sorted(word_a) == sorted(word_b)
+
+
+# Checking with examples
+if __name__ == "__main__":
+    for key in words:
+        print(
+            'Is the word "{0}" is anagram of "{1}"? {2}'.format(
+                key, words[key], is_anagram_v4(key, words[key]))
+        )
+```
