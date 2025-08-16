@@ -21,36 +21,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
+from data import words
 
 
-def count_frequencies_of(word):
-    """
-        Utility function to count frequencies of a letter in a string
-
-        Params:
-            word (str): Word to count the letter frequencies
-
-        Returns:
-            frequency_counter (dict): the dictionary of letters and frequencies
-    """
-    frequency_counter = {}
-
-    for char in word.lower():
-        if char in frequency_counter:
-            frequency_counter[char] += 1
-        else:
-            frequency_counter[char] = 1
-
-    return frequency_counter
-
-
-def is_anagram_v1(word_a, word_b):
+def is_anagram(word_a, word_b):
     """
         Verify if two string are anagram
 
         Params:
-            word_a (str): First word to compare
-            word_b (str): Second word to compare
+            word_A (str): First word to compare
+            word_B (str): Second word to compare
 
         Returns:
             True if they are anagrams, False otherwise
@@ -59,31 +39,18 @@ def is_anagram_v1(word_a, word_b):
     if len(word_a) != len(word_b):
         return False
 
-    frequencies_of_a = count_frequencies_of(word_a)
+    # Iterate through str1 and check if str2 contains each character too
+    for char1 in word_a.lower():
+        if char1 not in word_b.lower():
+            return False
 
-    frequencies_of_b = count_frequencies_of(word_b)
-
-    return frequencies_of_a == frequencies_of_b
+    return True
 
 
 # Checking with examples
 if __name__ == "__main__":
-    # Data example
-    words = {
-        'triangle': 'integral',
-        'danger': 'garden',
-        'hot': 'dog',
-        'elbow': 'below',
-        'peach': 'cheap',
-        'cat': 'act',
-        'cart': 'star',
-        'TRIANGLE': 'integral',
-        'juliano': 'giuliano',
-        'arithmetic': 'geometrics'
-    }
-
     for key in words:
         print(
             'Is the word "{0}" is anagram of "{1}"? {2}'.format(
-                key, words[key], is_anagram_v1(key, words[key]))
+                key, words[key], is_anagram(key, words[key]))
         )

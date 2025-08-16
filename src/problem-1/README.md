@@ -14,7 +14,7 @@ Examples:
 - elbow / below
 - cat / act
 
-The solution in python:
+One solution in python:
 
 ```python
 def count_frequencies_of(word):
@@ -99,4 +99,53 @@ Is the word "cart" is anagram of "star"? False
 Is the word "TRIANGLE" is anagram of "integral"? True
 Is the word "juliano" is anagram of "giuliano"? False
 Is the word "arithmetic" is anagram of "geometrics"? False
+```
+
+A second solution could be:
+
+```python
+def is_anagram_v2(word_a, word_b):
+    """
+        Verify if two string are anagram
+
+        Params:
+            word_a (str): First word to compare
+            word_b (str): Second word to compare
+
+        Returns:
+            True if they are anagrams, False otherwise
+    """
+    # Check the lengths
+    if len(word_a) != len(word_b):
+        return False
+
+    # Iterate through str1 and check if str2 contains each character too
+    for char1 in word_a.lower():
+        if char1 not in word_b.lower():
+            return False
+
+    return True
+
+
+# Checking with examples
+if __name__ == "__main__":
+    # Data example
+    words = {
+        'triangle': 'integral',
+        'danger': 'garden',
+        'hot': 'dog',
+        'elbow': 'below',
+        'peach': 'cheap',
+        'cat': 'act',
+        'cart': 'star',
+        'TRIANGLE': 'integral',
+        'juliano': 'giuliano',
+        'arithmetic': 'geometrics'
+    }
+
+    for key in words:
+        print(
+            'Is the word "{0}" is anagram of "{1}"? {2}'.format(
+                key, words[key], is_anagram_v2(key, words[key]))
+        )
 ```
