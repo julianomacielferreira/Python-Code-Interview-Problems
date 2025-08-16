@@ -32,7 +32,7 @@ words = {
 }
 ```
 
-The first [solution](valid_anagram_v1.py) in python:
+A first [solution](valid_anagram_v1.py) can be:
 
 ```python
 def count_frequencies_of(word):
