@@ -6,7 +6,7 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 
 ## Problems
 
-1) [Valid Anagram](./src/valid-anagram.ipynb)
+1) [Valid Anagram](src/problem-1/README.md)
 2) [Find First and Last Position](./src/first-and-last-position.ipynb)
 3) [kth largest element](./src/kth-largest-element.ipynb)
 4) [Symmetric tree](./src/symmetric-tree.ipynb)
