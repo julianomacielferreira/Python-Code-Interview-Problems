@@ -14,7 +14,7 @@ Un-symmetric Tree:
 
 ![un-symmetric tree](../static/un-symmetric-tree.png)
 
-A solution using recursion:
+A [solution](symmetric_tree_v1.py) using recursion:
 
 ```python
 class TreeNode:
@@ -76,41 +76,85 @@ def is_symmetric(root_node):
                 is_mirror(left_node.right, right_node.left)
         )
 
-    return is_mirror(root.left, root.right)
+    return is_mirror(root_node.left, root_node.right)
+```
+
+Testing with the two binary trees from the images above:
+
+```python
+def build_symmetric_btree():
+    # Root node
+    root_node = TreeNode(4)
+
+    # Creating left tree nodes
+    root_node.left = TreeNode(5)
+
+    root_node.left.left = TreeNode(2)
+    root_node.left.left.left = TreeNode(9)
+
+    root_node.left.left.left.left = TreeNode(3)
+    root_node.left.left.left.right = TreeNode(0)
+
+    root_node.left.left.right = TreeNode(7)
+    root_node.left.left.right.right = TreeNode(6)
+
+    root_node.left.right = TreeNode(8)
+    root_node.left.right.left = TreeNode(1)
+
+    # Creating right tree nodes
+    root_node.right = TreeNode(5)
+    root_node.right.left = TreeNode(8)
+    root_node.right.left.right = TreeNode(1)
+
+    root_node.right.right = TreeNode(2)
+    root_node.right.right.left = TreeNode(7)
+    root_node.right.right.left.left = TreeNode(6)
+
+    root_node.right.right.right = TreeNode(9)
+    root_node.right.right.right.left = TreeNode(0)
+    root_node.right.right.right.right = TreeNode(3)
+
+    return root_node
+
+
+def build_unsymmetric_btree():
+    # Root node
+    root_node = TreeNode(4)
+
+    # Creating left tree nodes
+    root_node.left = TreeNode(5)
+    root_node.left.left = TreeNode(2)
+    root_node.left.right = TreeNode(7)
+    root_node.left.left.left = TreeNode(9)
+    root_node.left.left.right = TreeNode(7)
+    root_node.left.left.left.left = TreeNode(3)
+    root_node.left.left.left.right = TreeNode(0)
+    root_node.left.left.right.right = TreeNode(6)
+
+    # Creating right tree nodes
+    root_node.right = TreeNode(5)
+    root_node.right.left = TreeNode(8)
+    root_node.right.right = TreeNode(2)
+    root_node.right.left.left = TreeNode(6)
+    root_node.right.left.right = TreeNode(1)
+    root_node.right.right.right = TreeNode(9)
+    root_node.right.right.right.left = TreeNode(0)
+    root_node.right.right.right.right = TreeNode(3)
+
+    return root_node
 
 
 # Example usage
 if __name__ == "__main__":
     # Root node
-    root = TreeNode(4)
+    symmetric_btree = build_symmetric_btree()
 
-    # Creating left tree nodes
-    root.left = TreeNode(5)
+    assert (is_symmetric(symmetric_btree))
 
-    root.left.left = TreeNode(2)
-    root.left.left.left = TreeNode(9)
+    # An un-symmetric binary tree
 
-    root.left.left.left.left = TreeNode(3)
-    root.left.left.left.right = TreeNode(0)
+    # Root node
+    un_symmetric_btree = build_unsymmetric_btree()
 
-    root.left.left.right = TreeNode(7)
-    root.left.left.right.right = TreeNode(6)
-
-    root.left.right = TreeNode(8)
-    root.left.right.left = TreeNode(1)
-
-    # Creating right tree nodes
-    root.right = TreeNode(5)
-    root.right.left = TreeNode(8)
-    root.right.left.right = TreeNode(1)
-
-    root.right.right = TreeNode(2)
-    root.right.right.left = TreeNode(7)
-    root.right.right.left.left = TreeNode(6)
-
-    root.right.right.right = TreeNode(9)
-    root.right.right.right.left = TreeNode(0)
-    root.right.right.right.right = TreeNode(3)
-
-    assert (is_symmetric(root))
+    assert (is_symmetric(un_symmetric_btree) == False)
 ```
