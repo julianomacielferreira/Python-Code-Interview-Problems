@@ -14,7 +14,25 @@ Examples:
 - elbow / below
 - cat / act
 
-One solution in python:
+Some words to validate:
+
+```python
+# Data example
+words = {
+    'triangle': 'integral',
+    'danger': 'garden',
+    'hot': 'dog',
+    'elbow': 'below',
+    'peach': 'cheap',
+    'cat': 'act',
+    'cart': 'star',
+    'TRIANGLE': 'integral',
+    'juliano': 'giuliano',
+    'arithmetic': 'geometrics'
+}
+```
+
+The first [solution](valid_anagram_v1.py) in python:
 
 ```python
 def count_frequencies_of(word):
@@ -62,20 +80,6 @@ def is_anagram_v1(word_a, word_b):
 
 # Checking with examples
 if __name__ == "__main__":
-    # Data example
-    words = {
-        'triangle': 'integral',
-        'danger': 'garden',
-        'hot': 'dog',
-        'elbow': 'below',
-        'peach': 'cheap',
-        'cat': 'act',
-        'cart': 'star',
-        'TRIANGLE': 'integral',
-        'juliano': 'giuliano',
-        'arithmetic': 'geometrics'
-    }
-
     for key in words:
         print(
             'Is the word "{0}" is anagram of "{1}"? {2}'.format(
@@ -101,7 +105,7 @@ Is the word "juliano" is anagram of "giuliano"? False
 Is the word "arithmetic" is anagram of "geometrics"? False
 ```
 
-A second solution could be:
+A second [solution](valid_anagram_v2.py):
 
 ```python
 def is_anagram_v2(word_a, word_b):
@@ -129,23 +133,42 @@ def is_anagram_v2(word_a, word_b):
 
 # Checking with examples
 if __name__ == "__main__":
-    # Data example
-    words = {
-        'triangle': 'integral',
-        'danger': 'garden',
-        'hot': 'dog',
-        'elbow': 'below',
-        'peach': 'cheap',
-        'cat': 'act',
-        'cart': 'star',
-        'TRIANGLE': 'integral',
-        'juliano': 'giuliano',
-        'arithmetic': 'geometrics'
-    }
-
     for key in words:
         print(
             'Is the word "{0}" is anagram of "{1}"? {2}'.format(
                 key, words[key], is_anagram_v2(key, words[key]))
         )
+```
+
+A third [solution](valid_anagram_v3.py):
+
+```python
+from collections import Counter
+
+
+def is_anagram_v3(word_a, word_b):
+    """
+        Verify if two string are anagram
+
+        Params:
+            word_a (str): First word to compare
+            word_b (str): Second word to compare
+
+        Returns:
+            True if they are anagrams, False otherwise
+    """
+    # Check the lengths
+    if len(word_a) != len(word_b):
+        return False
+
+    return Counter(word_a) == Counter(word_b)
+
+
+# Checking with examples
+for key in words:
+    print(
+        'Is the word "{0}" is anagram of "{1}"? {2}'.format(
+            key, words[key], is_anagram_v3(key, words[key]))
+    )
+
 ```
