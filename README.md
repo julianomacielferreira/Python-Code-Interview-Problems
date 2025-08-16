@@ -22,7 +22,6 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 │       ├── symmetric-tree.png
 │       ├── un-symmetric-tree.png
 │       └── video.jpg
-├── kth-largest-element.ipynb
 ├── LICENSE
 ├── problem-1
 │   ├── data.py
@@ -32,6 +31,8 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 │   ├── valid_anagram_v2.py
 │   ├── valid_anagram_v3.py
 │   └── valid_anagram_v4.py
+├── problem-10
+│   └── README.md
 ├── problem-2
 │   ├── data.py
 │   ├── find_first_last_position_v1.py
@@ -41,10 +42,27 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 │   ├── __pycache__
 │   └── README.md
 ├── problem-3
+│   ├── data.py
+│   ├── kth_largest_element_v1.py
+│   ├── kth_largest_element_v2.py
+│   ├── kth_largest_element_v3.py
+│   ├── __pycache__
+│   └── README.md
+├── problem-4
+│   ├── README.md
+│   └── symmetric-tree.ipynb
+├── problem-5
+│   └── README.md
+├── problem-6
+│   └── README.md
+├── problem-7
+│   └── README.md
+├── problem-8
+│   └── README.md
+├── problem-9
 │   └── README.md
 ├── README.md
-├── requirements.txt
-└── symmetric-tree.ipynb
+└── requirements.txt
 
 ```
 
