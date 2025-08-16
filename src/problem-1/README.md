@@ -90,21 +90,6 @@ if __name__ == "__main__":
 
 ```
 
-The output:
-
-```
-Is the word "triangle" is anagram of "integral"? True
-Is the word "danger" is anagram of "garden"? True
-Is the word "hot" is anagram of "dog"? False
-Is the word "elbow" is anagram of "below"? True
-Is the word "peach" is anagram of "cheap"? True
-Is the word "cat" is anagram of "act"? True
-Is the word "cart" is anagram of "star"? False
-Is the word "TRIANGLE" is anagram of "integral"? True
-Is the word "juliano" is anagram of "giuliano"? False
-Is the word "arithmetic" is anagram of "geometrics"? False
-```
-
 A second [solution](valid_anagram_v2.py):
 
 ```python
@@ -201,4 +186,19 @@ if __name__ == "__main__":
             'Is the word "{0}" is anagram of "{1}"? {2}'.format(
                 key, words[key], is_anagram_v4(key, words[key]))
         )
+```
+
+The output:
+
+```
+Is the word "triangle" is anagram of "integral"? True
+Is the word "danger" is anagram of "garden"? True
+Is the word "hot" is anagram of "dog"? False
+Is the word "elbow" is anagram of "below"? True
+Is the word "peach" is anagram of "cheap"? True
+Is the word "cat" is anagram of "act"? True
+Is the word "cart" is anagram of "star"? False
+Is the word "TRIANGLE" is anagram of "integral"? True
+Is the word "juliano" is anagram of "giuliano"? False
+Is the word "arithmetic" is anagram of "geometrics"? False
 ```
