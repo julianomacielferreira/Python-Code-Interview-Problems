@@ -63,7 +63,7 @@ def binary_search_last_occurrence(array, target):
     return -1
 
 
-def find_first_last_position_v4(integer_array, target):
+def find_first_last_position(integer_array, target):
     """
         Finds the first and last position of an integer in an ordered array
 
@@ -85,7 +85,7 @@ def find_first_last_position_v4(integer_array, target):
 
 # Checking
 if __name__ == "__main__":
-    assert(find_first_last_position_v4([], 10) == [-1, -1])
-    assert(find_first_last_position_v4(int_array, 10) == [-1, -1])
-    assert(find_first_last_position_v4(int_array, 5) == [2, 6])
-    assert(find_first_last_position_v4(int_array, 7) == [7, 7])
+    assert(find_first_last_position([], 10) == [-1, -1])
+    assert(find_first_last_position(int_array, 10) == [-1, -1])
+    assert(find_first_last_position(int_array, 5) == [2, 6])
+    assert(find_first_last_position(int_array, 7) == [7, 7])

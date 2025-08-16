@@ -25,7 +25,7 @@ THE SOFTWARE.
 from data import int_array
 
 
-def find_first_last_position_v1(integers_array, target):
+def find_first_last_position(integers_array, target):
     """
         Finds the first and last position of an integer in an ordered array
 
@@ -65,6 +65,6 @@ def find_first_last_position_v1(integers_array, target):
 
 # Checking
 if __name__ == "__main__":
-    assert (find_first_last_position_v1(int_array, 10) == [-1, -1])
-    assert (find_first_last_position_v1(int_array, 5) == [2, 6])
-    assert (find_first_last_position_v1(int_array, 7) == [7, 7])
+    assert (find_first_last_position(int_array, 10) == [-1, -1])
+    assert (find_first_last_position(int_array, 5) == [2, 6])
+    assert (find_first_last_position(int_array, 7) == [7, 7])

@@ -14,11 +14,17 @@ int_array = [2, 4, 5, 5, 5, 5, 5, 7, 9, 9]
 Five is at position two (int_array[2]) and appears until position six (int_array[6]), so it should returns [2, 6]
 ```
 
-One first [solution](find_first_last_position_v1.py) can be:
+Some integers to validate:
 
 ```python
 # Data example
 int_array = [2, 4, 5, 5, 5, 5, 5, 7, 9, 9]
+```
+
+A first [solution](find_first_last_position_v1.py) can be:
+
+```python
+
 
 def find_first_last_position_v1(integers_array, target):
     """
