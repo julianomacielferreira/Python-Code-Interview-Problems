@@ -26,7 +26,7 @@ from data import words
 from collections import Counter
 
 
-def is_anagram_v3(word_a, word_b):
+def is_anagram(word_a, word_b):
     """
         Verify if two string are anagram
 
@@ -49,5 +49,5 @@ if __name__ == "__main__":
     for key in words:
         print(
             'Is the word "{0}" is anagram of "{1}"? {2}'.format(
-                key, words[key], is_anagram_v3(key, words[key]))
+                key, words[key], is_anagram(key, words[key]))
         )
