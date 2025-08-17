@@ -14,7 +14,7 @@ Un-symmetric Tree:
 
 ![un-symmetric tree](../static/un-symmetric-tree.png)
 
-A [solution](symmetric_tree_v1.py) using recursion:
+A first [solution](symmetric_tree_v1.py) using recursion (depth-first search):
 
 ```python
 class TreeNode:
@@ -157,4 +157,43 @@ if __name__ == "__main__":
     un_symmetric_btree = build_unsymmetric_btree()
 
     assert (is_symmetric(un_symmetric_btree) == False)
+```
+
+A second [solution](symmetric_tree_v2.py):
+
+```python
+def are_symmetric(left_node, right_node):
+    """
+       Checks if a binary tree is symmetric.
+
+       A binary tree is symmetric if the left subtree is a mirror reflection of the right subtree.
+
+       Args:
+           left_node (TreeNode): The left node of the root of the binary tree.
+           right_node (TreeNode): The right node of the root of the binary tree.
+
+       Returns:
+           bool: True if the tree is symmetric, False otherwise.
+       """
+    if left_node is None and right_node is None:
+        return True
+    elif ((left_node is None) != (right_node is None)) or left_node.value != right_node.value:
+        return False
+    else:
+        return are_symmetric(left_node.left, right_node.right) and are_symmetric(left_node.right, right_node.left)
+
+# Example usage
+if __name__ == "__main__":
+    # Root node
+    symmetric_btree = build_symmetric_btree()
+
+    assert (are_symmetric(symmetric_btree.left, symmetric_btree.right))
+
+    # An un-symmetric binary tree
+
+    # Root node
+    un_symmetric_btree = build_unsymmetric_btree()
+
+    assert (are_symmetric(un_symmetric_btree.left, un_symmetric_btree.right) == False)
+
 ```

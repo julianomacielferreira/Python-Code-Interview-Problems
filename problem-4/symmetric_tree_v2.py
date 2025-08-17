@@ -21,48 +21,28 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
-from tree_node import TreeNode
 from data import build_symmetric_btree, build_unsymmetric_btree
 
 
-def is_symmetric(root_node):
+def are_symmetric(left_node, right_node):
     """
-    Checks if a binary tree is symmetric.
+       Checks if a binary tree is symmetric.
 
-    A binary tree is symmetric if the left subtree is a mirror reflection of the right subtree.
+       A binary tree is symmetric if the left subtree is a mirror reflection of the right subtree.
 
-    Args:
-        root_node (TreeNode): The root of the binary tree.
+       Args:
+           left_node (TreeNode): The left node of the root of the binary tree.
+           right_node (TreeNode): The right node of the root of the binary tree.
 
-    Returns:
-        bool: True if the tree is symmetric, False otherwise.
-    """
-    if root_node is None:
+       Returns:
+           bool: True if the tree is symmetric, False otherwise.
+       """
+    if left_node is None and right_node is None:
         return True
-
-    def is_mirror(left_node, right_node):
-        """
-        Checks if two binary trees are mirror images of each other.
-
-        Args:
-            left_node (TreeNode): The root of the first tree.
-            right_node (TreeNode): The root of the second tree.
-
-        Returns:
-            bool: True if the trees are mirror images, False otherwise.
-        """
-        if left_node is None and right_node is None:
-            return True
-        if left_node is None or right_node is None:
-            return False
-
-        return (
-                (left_node.value == right_node.value) and
-                is_mirror(left_node.left, right_node.right) and
-                is_mirror(left_node.right, right_node.left)
-        )
-
-    return is_mirror(root_node.left, root_node.right)
+    elif ((left_node is None) != (right_node is None)) or left_node.value != right_node.value:
+        return False
+    else:
+        return are_symmetric(left_node.left, right_node.right) and are_symmetric(left_node.right, right_node.left)
 
 
 # Example usage
@@ -70,11 +50,11 @@ if __name__ == "__main__":
     # Root node
     symmetric_btree = build_symmetric_btree()
 
-    assert (is_symmetric(symmetric_btree))
+    assert (are_symmetric(symmetric_btree.left, symmetric_btree.right))
 
     # An un-symmetric binary tree
 
     # Root node
     un_symmetric_btree = build_unsymmetric_btree()
 
-    assert (is_symmetric(un_symmetric_btree) == False)
+    assert (are_symmetric(un_symmetric_btree.left, un_symmetric_btree.right) == False)
