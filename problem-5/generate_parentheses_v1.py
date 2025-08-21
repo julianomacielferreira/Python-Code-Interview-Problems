@@ -24,16 +24,55 @@ THE SOFTWARE.
 
 
 def is_valid(combination):
-    stack = []
+    diff = 0
     for pair in combination:
         if pair == '(':
-            stack.append(pair)
+            diff += 1
         else:
             # Not try to pop from an empty stack (otherwise it means that we found a closing parenthesis
             # without an opening one from it)
-            if len(stack) == 0:
+            if diff == 0:
                 return False
             else:
-                stack.pop()
+                diff -= 1
     # Stack must be empty at the end  (otherwise it means that there's an opening parentheses that did not close)
-    return len(stack) == 0
+    return diff == 0
+
+
+def generate(n):
+    """
+    Generates all possible transfers of well-formed parents.
+
+    Arguments:
+
+    n (int): The number of pairs of parentheses.
+
+    Returns:
+
+    list: A list of strings, each representing a possible combination of well-formed pairs.
+    """
+
+    def rec(n, diff, comb, combs):
+        if diff < 0:
+            return
+        elif n == 0:
+            if diff == 0:
+                combs.append(''.join(comb))
+        else:
+            comb.append('(')
+            rec(n - 1, diff + 1, comb, combs)
+            comb.pop()
+            comb.append(')')
+            rec(n - 1, diff - 1, comb, combs)
+            comb.pop()
+
+    combs = []
+    rec(2 * n, 0, [], combs)
+
+    return combs
+
+
+if __name__ == "__main__":
+    n = 3
+    result = generate(n)
+    print(result)
