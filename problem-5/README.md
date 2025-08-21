@@ -62,3 +62,15 @@ The output:
 ```bash
 ['((()))', '(()())', '(())()', '()(())', '()()()']
 ```
+
+A more detailed explanation:
+
+- The function  ``generate_parenthesis`` receives an argument ``n``, which represents the number of pairs of parenthesis.
+- The function ``backtrack`` is an auxiliary function that uses backtracking to generate all possible combinations of well-formed parenthesis.
+- The function ``backtrack`` receives three parameters: ``open_count``, which represents the number of opened parenthesis, ``close_count`` representing
+the number of closed parenthesis; and ``current_combination``, which represents the actual combination of parenthesis.
+- If the current combination has the correct number of parenthesis (i.e, ``len(current_combination) == 2 * n``), the function adds the combination to the list of results.
+- If the number of parenthesis opened is less than ``n``, the function adds one opened parentheses to the current combination and call itself recursively.
+- If the number of parenthesis closed is less than the number of opened parenthesis, the function adds a closed parenthesis to the current combination and call itself recursively.
+- After each recursive call, the function removes the last character added to the current combination (using ``current_combination.pop()``) stop the backtrack and explore other possibilities
+in the search space.
