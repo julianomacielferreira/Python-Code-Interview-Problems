@@ -10,6 +10,7 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 2) [Find First and Last Position](problem-2/README.md)
 3) [kth largest element](problem-3/README.md)
 4) [Symmetric tree](problem-4/README.md)
+5) [Generate Parentheses](problem-5/README.md)
 
 @TODO
 
