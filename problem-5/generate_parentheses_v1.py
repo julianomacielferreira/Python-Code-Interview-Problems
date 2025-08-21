@@ -35,5 +35,5 @@ def is_valid(combination):
                 return False
             else:
                 stack.pop()
-
+    # Stack must be empty at the end  (otherwise it means that there's an opening parentheses that did not close)
     return len(stack) == 0
