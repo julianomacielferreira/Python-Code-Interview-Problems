@@ -113,6 +113,56 @@ index ``i``, all stations between ``start`` and ``i`` inclusive are invalid.
 
 ![](../static/gas-station-case-2.png)
 
+The time complexity of ``can_traverse`` function is O(n), where ``n`` is the number os stations, since it potentially
+traverses the entire route. The time complexity of the ``gas_station`` function is O(n<sup>2</sup>) in the worst case,
+since it calls the ``traverse`` function for each station. However, this can be optimized to O(n) by using simple pass 
+through the stations and keeping track of the total gas and cost.
+
+A optimized solution:
+
+```python
+def gas_station(gas, cost):
+    """
+    Finds the starting gas station for a circular route.
+
+    Args:
+        gas (list): The amount of gas at each station.
+        cost (list): The cost of gas to travel from each station to the next.
+
+    Returns:
+        int: The index of the starting station, or -1 if it's not possible.
+    """
+    # Calculate the total gas and cost
+    total_gas = sum(gas)
+    total_cost = sum(cost)
+    
+    # If the total gas is less than the total cost, it's not possible to traverse the route
+    if total_gas < total_cost:
+        return -1
+    
+    # Initialize the starting station and the current tank level
+    start = 0
+    tank = 0
+    
+    # Iterate over the stations
+    for i in range(len(gas)):
+        # Calculate the current tank level
+        tank += gas[i] - cost[i]
+        
+        # If the tank level becomes negative, update the starting station
+        if tank < 0:
+            start = i + 1
+            tank = 0
+    
+    # Return the starting station
+    return start
+
+# Example usage:
+gas = [1,2,3,4,5]
+cost = [3,4,5,1,2]
+print(gas_station(gas, cost))  # Output: 3
+```
+
 A second solution:
 
 ```python
