@@ -19,11 +19,6 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 
 ```
 .
-├── assets
-│   └── img
-│       ├── symmetric-tree.png
-│       ├── un-symmetric-tree.png
-│       └── video.jpg
 ├── LICENSE
 ├── problem-1
 │   ├── data.py
@@ -51,9 +46,15 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 │   ├── __pycache__
 │   └── README.md
 ├── problem-4
+│   ├── data.py
+│   ├── __pycache__
 │   ├── README.md
-│   └── symmetric-tree.ipynb
+│   ├── symmetric_tree_v1.py
+│   ├── symmetric_tree_v2.py
+│   └── tree_node.py
 ├── problem-5
+│   ├── generate_parentheses_v1.py
+│   ├── generate_parentheses_v2.py
 │   └── README.md
 ├── problem-6
 │   └── README.md
@@ -64,7 +65,14 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 ├── problem-9
 │   └── README.md
 ├── README.md
-└── requirements.txt
+├── requirements.txt
+└── static
+    ├── gas-station-problem.png
+    ├── generate-parentheses.png
+    ├── symmetric-tree.png
+    ├── un-symmetric-tree.png
+    └── video.jpg
+
 
 ```
 
