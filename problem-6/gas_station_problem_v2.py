@@ -36,6 +36,7 @@ def gas_station(gas, cost):
         int: The index of the starting station, or -1 if it's not possible.
     """
     remaining = 0  # Remaining gas after traveling through stations
+    prev_remaining = 0  # Previous remaining gas
     candidate = 0  # Potential starting station
     # Loop through each station
     for i in range(len(gas)):
@@ -46,11 +47,10 @@ def gas_station(gas, cost):
         if remaining < 0:  # Not enough gas to reach the next station
             # Update the candidate starting station to the next station
             candidate = i + 1
+            # Previous remaining gas before the candidate starting station
+            prev_remaining += remaining
             # Reset the remaining gas
             remaining = 0
-
-    # Calculate the remaining gas before the candidate starting station
-    prev_remaining = sum(gas[:candidate]) - sum(cost[:candidate])  # Remaining gas before the starting point
 
     # Check if it's possible to traverse the route starting from the candidate station
     # Return -1 if it's not possible
