@@ -24,18 +24,35 @@ THE SOFTWARE.
 
 
 def is_valid(combination):
-    diff = 0
+    """
+    Checks if a combination of parentheses is valid.
+
+    Args:
+       combination (str): The combination of parentheses to check.
+
+    Returns:
+       bool: True if the combination is valid, False otherwise.
+    """
+    # Initialize the counter for open parentheses
+    diff = 0  # Counter for open parentheses
+    # Iterate over each parenthesis in the combination
     for pair in combination:
-        if pair == '(':
-            diff += 1
-        else:
-            # Not try to pop from an empty stack (otherwise it means that we found a closing parenthesis
-            # without an opening one from it)
-            if diff == 0:
-                return False
-            else:
+        # Check if the parenthesis is open
+        if pair == '(':  # Check for open parenthesis
+            # Increment the counter for open parentheses
+            diff += 1  # Increment counter
+        # If it's not an open parenthesis, it's a close parenthesis
+        else:  # Close parenthesis
+            # Check if there are open parentheses to close
+            if diff == 0:  # No open parentheses to close
+                # Return False if there are no open parentheses to close
+                return False  # Invalid combination
+            # If there are open parentheses to close
+            else:  # Open parentheses to close
+                # Decrement the counter for open parentheses
                 diff -= 1
-    # Stack must be empty at the end  (otherwise it means that there's an opening parentheses that did not close)
+    # Check if the stack is empty at the end
+    # Return True if the combination is valid and False otherwise
     return diff == 0
 
 
