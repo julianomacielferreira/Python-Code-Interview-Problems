@@ -30,7 +30,7 @@ A brute force solution:
 &nbsp;&nbsp;**If** the car goes back to ``i``:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;``i`` is the right station, return it
 
-A python solution:
+A first solution can be implemented as:
 
 ```python
 gas = [1, 5, 3, 3, 5, 3, 1, 3, 4, 5]
@@ -90,6 +90,16 @@ def gas_station(gas, cost):
     # If no starting station is found, return -1
     return -1
 ```
+
+A more detailed explanation:
+
+The ``can_traverse`` function checks if it's possible to traverse a circular route starting from a given station.
+It iterates over the stations, keeping track of the remaining gas. If the remaining gas becomes negative at any given 
+point, it returns False. If it successfully traverses the entire route without running out of gas, it returns True.
+
+The ``gas_station`` function finds the starting gas station's  index by iterating over each station as a potential starting
+point and calling the ``can_traverse`` function. If it finds a start station that allows traversing the entire route, 
+it returns the index of that station. If no such station is found, it returns -1.
 
 If a station ``start`` reaches a negative amount at the index ``i``, then all stations between ``start`` and ``i``
 inclusive are invalid, so start again from ``i + 1``.
