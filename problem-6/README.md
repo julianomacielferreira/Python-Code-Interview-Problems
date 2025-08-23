@@ -20,3 +20,10 @@ cost[i] >= 0
 - ``cost[i]`` represents the cost to go from the station ``i`` to the next one
 - The answer is guaranteed to be unique
 - If the station searching for doesn't exist, return -1
+
+A brute force solution:
+
+**For** each station ``i``:<br>
+&nbsp;&nbsp;Start traversing from there<br>
+&nbsp;&nbsp;**If** the car goes back to ``i``:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;``i`` is the right station, return it
