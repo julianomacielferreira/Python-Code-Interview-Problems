@@ -112,3 +112,43 @@ The other case when ``gas[start]`` $\ge$ ``cost[start]`` $\implies$ if the car r
 index ``i``, all stations between ``start`` and ``i`` inclusive are invalid.
 
 ![](../static/gas-station-case-2.png)
+
+A second solution:
+
+```python
+def gas_station(gas, cost):
+    """
+    Finds the starting gas station for a circular route.
+
+    Args:
+        gas (list): The amount of gas at each station.
+        cost (list): The cost of gas to travel from each station to the next.
+
+    Returns:
+        int: The index of the starting station, or -1 if it's not possible.
+    """
+    remaining = 0  # Remaining gas after traveling through stations
+    candidate = 0  # Potential starting station
+    # Loop through each station
+    for i in range(len(gas)):
+        # Calculate the remaining gas after traveling through the current station
+        remaining += gas[i] - cost[i]  # Update remaining gas
+
+        # If the remaining gas is negative, update the candidate starting station
+        if remaining < 0:  # Not enough gas to reach the next station
+            # Update the candidate starting station to the next station
+            candidate = i + 1
+            # Reset the remaining gas
+            remaining = 0
+
+    # Calculate the remaining gas before the candidate starting station
+    prev_remaining = sum(gas[:candidate]) - sum(cost[:candidate])  # Remaining gas before the starting point
+
+    # Check if it's possible to traverse the route starting from the candidate station
+    # Return -1 if it's not possible
+    if candidate == len(gas) or (remaining + prev_remaining) < 0:
+        return -1  # Can't traverse the route
+    else:
+        # Return the candidate starting station
+        return candidate
+```

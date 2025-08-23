@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
+from data import gas, cost
 
 
 def gas_station(gas, cost):
@@ -58,3 +59,9 @@ def gas_station(gas, cost):
     else:
         # Return the candidate starting station
         return candidate
+
+
+if __name__ == "__main__":
+    result = gas_station(gas, cost)
+    assert (result != -1)
+    assert (result == 8)
