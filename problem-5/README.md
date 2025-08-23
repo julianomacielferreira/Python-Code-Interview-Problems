@@ -74,3 +74,8 @@ the number of closed parenthesis; and ``current_combination``, which represents 
 - If the number of parenthesis closed is less than the number of opened parenthesis, the function adds a closed parenthesis to the current combination and call itself recursively.
 - After each recursive call, the function removes the last character added to the current combination (using ``current_combination.pop()``) stop the backtrack and explore other possibilities
 in the search space.
+
+The complexity:
+
+- The time complexity of the solution is O(4<sup>n</sup> / n<sup>$\frac{3}{2}$</sup>), because the number of possible well-formed parenthesis combinations is given by the Catalan formula.
+- The space complexity of the solution is O(4<sup>n</sup> / n<sup>$\frac{3}{2}$</sup>), because it's necessary to store all the possible well-formed parenthesis combinations on the result list.
