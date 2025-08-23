@@ -92,4 +92,11 @@ def gas_station(gas, cost):
 If a station ``start`` reaches a negative amount at the index ``i``, then all stations between ``start`` and ``i``
 inclusive are invalid, so start again from ``i + 1``.
 
-The case ``gas[start]`` $\lt$ ``cost[start]`` $\implies$ the car directly stops, no other stations are involved
+The case ``gas[start]`` $\lt$ ``cost[start]`` $\implies$ the car directly stops, no other stations are involved.
+
+![](../static/gas-station-case-1.png)
+
+The other case when ``gas[start]`` $\ge$ ``cost[start]`` $\implies$ if the car reaches a negative amount of gas at the 
+index ``i``, all stations between ``start`` and ``i`` inclusive are invalid.
+
+![](../static/gas-station-case-2.png)
