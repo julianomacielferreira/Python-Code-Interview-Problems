@@ -4,6 +4,8 @@ Given a circular list of gas stations, where we can go from station ``i`` to the
 goes back to the first one, find the index of the station from where we start to be able to traverse all the stations
 and go back to the initial one without running out of gas.
 
+![](../static/gas-station-problem.png)
+
 Some constraints of the problem are:
 
 ```
