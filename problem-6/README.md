@@ -14,6 +14,8 @@ gas[i] >= 0
 cost[i] >= 0
 ```
 
+- The length of the gas and cost lists is the same.
+- The amount of gas at each station and the cost of gas to travel between stations are non-negative integers.
 - Can only move forward
 - The gas tank starts empty
 - ``gas[i]`` represents the amount of gas at the station ``i``
