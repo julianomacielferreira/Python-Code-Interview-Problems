@@ -118,7 +118,7 @@ traverses the entire route. The time complexity of the ``gas_station`` function 
 since it calls the ``traverse`` function for each station. However, this can be optimized to O(n) by using simple pass 
 through the stations and keeping track of the total gas and cost.
 
-A optimized solution:
+An optimized solution:
 
 ```python
 def gas_station(gas, cost):
