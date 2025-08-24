@@ -120,6 +120,8 @@ through the stations and keeping track of the total gas and cost.
 
 $T(n) =$ n + (n - 1) + (n - 2) + ... + 1 $=$ $\sum_{i = 0}^{n - 1} n - i$
 
+$\sum_{0 \le i \lt 0} gas[i] - \sum_{0 \le i \lt 0} cost[i] + remaining \ge 0$
+
 An optimized solution:
 
 ```python
