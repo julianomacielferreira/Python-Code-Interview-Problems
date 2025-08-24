@@ -118,6 +118,8 @@ traverses the entire route. The time complexity of the ``gas_station`` function 
 since it calls the ``traverse`` function for each station. However, this can be optimized to O(n) by using simple pass 
 through the stations and keeping track of the total gas and cost.
 
+$T(n) =$ n + (n - 1) + (n - 2) + ... + 1 $=$ $\sum_{i = 0}^{n - 1} n - i$
+
 An optimized solution:
 
 ```python
