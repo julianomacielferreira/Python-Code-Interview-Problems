@@ -57,7 +57,13 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 │   ├── generate_parentheses_v2.py
 │   └── README.md
 ├── problem-6
-│   └── README.md
+│   ├── data.py
+│   ├── gas_station_problem_v1.py
+│   ├── gas_station_problem_v2.py
+│   ├── __pycache__
+│   ├── README.md
+│   ├── test_gas_station_problem_v1.py
+│   └── test_gas_station_problem_v2.py
 ├── problem-7
 │   └── README.md
 ├── problem-8
@@ -67,12 +73,14 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 ├── README.md
 ├── requirements.txt
 └── static
+    ├── course-schedule.png
+    ├── gas-station-case-1.png
+    ├── gas-station-case-2.png
     ├── gas-station-problem.png
     ├── generate-parentheses.png
     ├── symmetric-tree.png
     ├── un-symmetric-tree.png
     └── video.jpg
-
 
 ```
 
