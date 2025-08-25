@@ -24,4 +24,11 @@ visiting all of its neighbors before backtracking.
 3. Visit all the neighbors of the node that have not been visited.
 4. Repeat steps 2 and 3 for each neighbor until all nodes have been visited.
 
+**Types of DFS**
+
+There are three types of DFS:
+
+1. **Pre-order DFS:** Visit the current node before visiting its neighbors.
+2. **In-order DFS:** Visit the left subtree, the current node, and then the right subtree (only applicable to binary trees).
+3. **Post-order DFS:** Visit the neighbors before visiting the current node.
 
