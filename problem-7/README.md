@@ -35,5 +35,77 @@ There are three types of DFS:
 A code example of a DFS algorithm:
 
 ```python
+class Graph:
+    def __init__(self):
+        """
+        Initialize an empty graph
+        """
+        self.adjacency_list = {}
 
+    def add_edge(self, node1, node2):
+        """
+        Add an edge between two nodes in the graph.
+
+        Args:
+            node1 (any): The first node.
+            node2 (any): The second node.
+        """
+        if node1 not in self.adjacency_list:
+            self.adjacency_list[node1] = []
+        if node2 not in self.adjacency_list:
+            self.adjacency_list[node2] = []
+
+        self.adjacency_list[node1].append(node2)
+        self.adjacency_list[node2].append(node1)
+
+    def dfs(self, start_node):
+        """
+        Perform a depth-first search traversal of the graph.
+
+        Args:
+            start_node (any): The node to start the traversal from.
+
+        Returns:
+            list: A list of nodes in the order they were visited.
+        """
+        visited = set()
+        traversal_order = []
+        self._dfs_helper(start_node, visited, traversal_order)
+
+        return traversal_order
+
+    def _dfs_helper(self, node, visited, traversal_order):
+        """
+        A helper function to perform the depth-first search traversal.
+
+        Args:
+            node (any): The current node.
+            visited (set): A set of visited nodes.
+            traversal_order (list): A list to store the traversal order.
+        """
+        visited.add(node)
+        traversal_order.append(node)
+
+        for neighbor in self.adjacency_list[node]:
+            if neighbor not in visited:
+                self._dfs_helper(neighbor, visited, traversal_order)
+
+
+# Example usage
+if __name__ == "__main__":
+    graph = Graph()
+    graph.add_edge('A', 'B')
+    graph.add_edge('A', 'C')
+    graph.add_edge('B', 'D')
+    graph.add_edge('C', 'E')
+    graph.add_edge('D', 'F')
+
+    graph_traversal_order = graph.dfs('A')
+    print("DFS Traversal Order:", graph_traversal_order)
+```
+
+The output:
+
+```bash
+DFS Traversal Order: ['A', 'B', 'D', 'F', 'C', 'E']
 ```
