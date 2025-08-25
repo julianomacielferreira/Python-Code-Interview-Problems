@@ -32,3 +32,8 @@ There are three types of DFS:
 2. **In-order DFS:** Visit the left subtree, the current node, and then the right subtree (only applicable to binary trees).
 3. **Post-order DFS:** Visit the neighbors before visiting the current node.
 
+A code example of a DFS algorithm:
+
+```python
+
+```
