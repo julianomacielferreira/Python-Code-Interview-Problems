@@ -36,6 +36,13 @@ A code example of a DFS algorithm:
 
 ```python
 class Graph:
+    """
+    A class representing an undirected graph using an adjacency list.
+
+    Attributes:
+        adjacency_list (dict): A dictionary where each key is a node and its corresponding value is a list of neighboring nodes.
+    """
+
     def __init__(self):
         """
         Initialize an empty graph
@@ -49,6 +56,9 @@ class Graph:
         Args:
             node1 (any): The first node.
             node2 (any): The second node.
+
+        Note:
+            This method adds an edge between two nodes in both directions, making the graph undirected.
         """
         if node1 not in self.adjacency_list:
             self.adjacency_list[node1] = []
@@ -67,7 +77,13 @@ class Graph:
 
         Returns:
             list: A list of nodes in the order they were visited.
+
+        Raises:
+            KeyError: If the start node is not in the graph.
         """
+        if start_node not in self.adjacency_list:
+            raise KeyError(f"Start node '{start_node}' not found in the graph")
+        
         visited = set()
         traversal_order = []
         self._dfs_helper(start_node, visited, traversal_order)
