@@ -125,3 +125,9 @@ The output:
 ```bash
 DFS Traversal Order: ['A', 'B', 'D', 'F', 'C', 'E']
 ```
+
+DFS is useful in various scenarios when dealing with graphs, such as:
+
+1. **Find connected components**
+2. **Topological Sorting** in a directed acyclic graph (DAG).
+3. **Finding strongly connected components**
