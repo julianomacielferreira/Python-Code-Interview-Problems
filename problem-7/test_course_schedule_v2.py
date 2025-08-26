@@ -39,7 +39,7 @@ class GraphTestCase(unittest.TestCase):
         self.assertEqual(graph.graph, {'A': ['B']})
         self.assertEqual(graph.in_degree, {'A': 0, 'B': 1})
 
-    def test_add_edge_multiple(self):
+    def test_topological_sort(self):
         graph = Graph()
         graph.add_edge('A', 'B')
         graph.add_edge('A', 'C')
@@ -47,6 +47,15 @@ class GraphTestCase(unittest.TestCase):
         graph.add_edge('C', 'D')
 
         self.assertEqual(graph.topological_sort(), ['A', 'B', 'C', 'D'])
+
+    def test_add_edge_multiple(self):
+        graph = Graph()
+        graph.add_edge('A', 'B')
+        graph.add_edge('A', 'C')
+        graph.add_edge('B', 'D')
+
+        self.assertEqual(graph.graph, {'A': ['B', 'C'], 'B': ['D']})
+        self.assertEqual(graph.in_degree, {'A': 0, 'B': 1, 'C': 1, 'D': 1})
 
 
 if __name__ == '__main__':
