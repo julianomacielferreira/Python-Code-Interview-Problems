@@ -34,11 +34,19 @@ class GraphTestCase(unittest.TestCase):
 
     def test_add_edge(self):
         graph = Graph()
-
         graph.add_edge('A', 'B')
 
         self.assertEqual(graph.graph, {'A': ['B']})
         self.assertEqual(graph.in_degree, {'A': 0, 'B': 1})
+
+    def test_add_edge_multiple(self):
+        graph = Graph()
+        graph.add_edge('A', 'B')
+        graph.add_edge('A', 'C')
+        graph.add_edge('B', 'D')
+        graph.add_edge('C', 'D')
+
+        self.assertEqual(graph.topological_sort(), ['A', 'B', 'C', 'D'])
 
 
 if __name__ == '__main__':
