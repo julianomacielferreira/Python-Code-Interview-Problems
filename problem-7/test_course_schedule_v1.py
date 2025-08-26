@@ -25,15 +25,29 @@ import unittest
 
 from course_schedule_v1 import Graph
 
+
 class GraphTestCase(unittest.TestCase):
     def test_init(self):
         graph = Graph()
+
         self.assertEqual(graph.adjacency_list, {})  # add assertion here
 
     def test_add_edge(self):
         graph = Graph()
         graph.add_edge('A', 'B')
+
         self.assertEqual(graph.adjacency_list, {'A': ['B'], 'B': ['A']})
+
+    def test_dfs(self):
+        graph = Graph()
+        graph.add_edge('A', 'B')
+        graph.add_edge('A', 'C')
+        graph.add_edge('B', 'D')
+        graph.add_edge('C', 'E')
+        traversal_order = graph.dfs('A')
+
+        self.assertEqual(set(traversal_order), {'A', 'B', 'C', 'D', 'E'})
+
 
 if __name__ == '__main__':
     unittest.main()
