@@ -131,3 +131,16 @@ DFS is useful in various scenarios when dealing with graphs, such as:
 1. **Find connected components**
 2. **Topological Sorting** in a directed acyclic graph (DAG).
 3. **Finding strongly connected components**
+
+In this problem **Topological Sort** is used, so a more detailed explanation is necessary.
+
+**Topological Sorting**
+
+Topological sorting is a linear ordering of vertices in a directed acyclic graph (DAG) such that
+for every directed edge u &rarr; v, vertex u comes before v in the ordering.
+
+**How topological sorting works**
+
+1. **Choose a vertex with no incoming edges:** Find a vertex with no incoming edges, which means it has no dependencies.
+2. **Remove the vertex from the graph:** Remove the vertex from the graph and add it to the sorted list.
+3. **Repeat the process:** Repeats the step 1 and 2 until all vertices have been removed from the graph.
