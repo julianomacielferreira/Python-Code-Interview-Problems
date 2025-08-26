@@ -57,6 +57,15 @@ class GraphTestCase(unittest.TestCase):
         self.assertEqual(graph.graph, {'A': ['B', 'C'], 'B': ['D']})
         self.assertEqual(graph.in_degree, {'A': 0, 'B': 1, 'C': 1, 'D': 1})
 
+    def test_topological_sort_cycle(self):
+        graph = Graph()
+        graph.add_edge('A', 'B')
+        graph.add_edge('A', 'C')
+        graph.add_edge('C', 'A')
+
+        with self.assertRaises(ValueError):
+            graph.topological_sort()
+
 
 if __name__ == '__main__':
     unittest.main()
