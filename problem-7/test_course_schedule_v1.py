@@ -48,6 +48,12 @@ class GraphTestCase(unittest.TestCase):
 
         self.assertEqual(set(traversal_order), {'A', 'B', 'C', 'D', 'E'})
 
+    def test_start_node_not_in_graph(self):
+        graph = Graph()
+        graph.add_edge('A', 'B')
+        with self.assertRaises(KeyError):
+            graph.dfs('C')
+
 
 if __name__ == '__main__':
     unittest.main()
