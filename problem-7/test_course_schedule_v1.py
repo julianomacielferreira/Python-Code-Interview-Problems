@@ -51,8 +51,15 @@ class GraphTestCase(unittest.TestCase):
     def test_start_node_not_in_graph(self):
         graph = Graph()
         graph.add_edge('A', 'B')
+
         with self.assertRaises(KeyError):
             graph.dfs('C')
+
+    def test_dfs_empty_graph(self):
+        graph = Graph()
+
+        with self.assertRaises(KeyError):
+            graph.dfs('A')
 
 
 if __name__ == '__main__':
