@@ -77,3 +77,19 @@ class Graph:
             raise ValueError("Graph contains a cycle and cannot be topologically sorted")
 
         return topological_order
+
+
+# Example usage
+if __name__ == "__main__":
+    graph = Graph()
+    graph.add_edge('A', 'B')
+    graph.add_edge('A', 'C')
+    graph.add_edge('B', 'D')
+    graph.add_edge('C', 'D')
+    graph.add_edge('D', 'E')
+
+    try:
+        topological_order = graph.topological_sort()
+        print("Topological Order:", topological_order)
+    except ValueError as e:
+        print(e)
