@@ -26,6 +26,16 @@ from course_schedule_v2 import Graph
 
 
 class GraphTestCase(unittest.TestCase):
+    """
+    These tests cover the following cases:
+
+    - Graph initialization
+    - Adding edges
+    - Topological sorting on an acyclic graph
+    - Topological sorting on a graph with a cycle
+    - Topological sorting on an empty graph
+    """
+
     def test_init(self):
         graph = Graph()
 
