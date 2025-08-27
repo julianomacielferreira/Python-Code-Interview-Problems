@@ -66,6 +66,11 @@ class GraphTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             graph.topological_sort()
 
+    def test_topological_sort_empty_graph(self):
+        graph = Graph()
+
+        self.assertEqual(graph.topological_sort(), [])
+
 
 if __name__ == '__main__':
     unittest.main()
