@@ -89,7 +89,7 @@ if __name__ == "__main__":
     graph.add_edge('D', 'E')
 
     try:
-        topological_order = graph.topological_sort()
-        print("Topological Order:", topological_order)
+        topological_order_sorted = graph.topological_sort()
+        print("Topological Order:", topological_order_sorted)
     except ValueError as e:
         print(e)
