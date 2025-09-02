@@ -88,6 +88,17 @@ def topological_sort(graph):
 
     Time Complexity:
         O(V + E), where V is the number of vertices and E is the number of Edges.
+
+    Example:
+        >>> graph = {
+        ...     'A': ['B', 'C'],
+        ...     'B': ['D'],
+        ...     'C': ['D'],
+        ...     'D': []
+        ... }
+
+        >>> topological_sort(graph)
+        ['A', 'C', 'B', 'D']
     """
     visited = set()
     path = []
