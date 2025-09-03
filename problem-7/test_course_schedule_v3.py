@@ -53,6 +53,16 @@ class DFSTestCase(unittest.TestCase):
 
         self.assertFalse(dfs(graph, 'A', path, order, visited))
 
+    def test_invalid_graph_type(self):
+        graph = "invalid"
+
+        path = []
+        order = []
+        visited = set()
+
+        with self.assertRaises(TypeError):
+            dfs(graph, 'A', path, order, visited)
+
 
 if __name__ == '__main__':
     unittest.main()
