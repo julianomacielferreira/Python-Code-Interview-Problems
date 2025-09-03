@@ -32,14 +32,15 @@ def dfs(graph, vertex, path, order, visited):
     Once a vertex has no more unvisited neighbors, it is added to the order list.
 
     Args:
-        graph (dict): The graph represented as an adjacency list.
+        graph (dict): The graph represented as an adjacency list. Each key is a vertex, and its
+            corresponding value is a list of its neighbors.
         vertex: The current vertex being visited.
         path (list): The current path of vertices.
         order (list): The list of vertices in topological order.
         visited (set): The set of visited vertices.
 
     Returns:
-        None
+        bool: True if the graph is acyclic, False otherwise.
 
     Raises:
         TypeError: If a graph is not a dict, or if path, order, or visited are not a list or set.
@@ -53,13 +54,17 @@ def dfs(graph, vertex, path, order, visited):
 
     path.append(vertex)
 
-    visited.add(vertex)
-
     for neighbor in graph.get(vertex, []):
+        if neighbor in path:
+            return False
         if neighbor not in visited:
-            dfs(graph, neighbor, path, order, visited)
+            visited.add(vertex)
+            if not dfs(graph, neighbor, path, order, visited):
+                return False
 
     order.append(path.pop())
+
+    return True
 
 
 def topological_sort(graph):
