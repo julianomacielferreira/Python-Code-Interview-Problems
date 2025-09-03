@@ -44,6 +44,9 @@ def dfs(graph, vertex, path, order, visited):
 
     Raises:
         TypeError: If a graph is not a dict, or if path, order, or visited are not a list or set.
+
+    Notes:
+        This function modifies the path, order, and visited parameters in-place.
     """
     if not isinstance(graph, dict):
         raise TypeError("Graph must be a dict")
