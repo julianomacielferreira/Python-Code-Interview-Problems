@@ -63,7 +63,7 @@ class DFSTestCase(unittest.TestCase):
         with self.assertRaises(TypeError):
             dfs(graph, 'A', path, order, visited)
 
-    def test_invalid_graph_path(self):
+    def test_invalid_path_type(self):
         graph = {
             'A': ['B']
         }
