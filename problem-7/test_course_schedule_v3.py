@@ -68,7 +68,7 @@ class DFSTestCase(unittest.TestCase):
             'A': ['B']
         }
 
-        path = 'invalid'
+        path = "invalid"
         order = []
         visited = set()
 
@@ -81,8 +81,20 @@ class DFSTestCase(unittest.TestCase):
         }
 
         path = []
-        order = 'invalid'
+        order = "invalid"
         visited = set()
+
+        with self.assertRaises(TypeError):
+            dfs(graph, 'A', path, order, visited)
+
+    def test_invalid_visited_type(self):
+        graph = {
+            'A': ['B']
+        }
+
+        path = []
+        order = []
+        visited = "invalid"
 
         with self.assertRaises(TypeError):
             dfs(graph, 'A', path, order, visited)
