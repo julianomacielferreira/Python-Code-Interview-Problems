@@ -40,6 +40,19 @@ class DFSTestCase(unittest.TestCase):
 
         self.assertTrue(dfs(graph, 'A', path, order, visited))
 
+    def test_cyclic_graph(self):
+        graph = {
+            'A': ['B'],
+            'B': ['C'],
+            'C': ['A']
+        }
+
+        path = []
+        order = []
+        visited = set()
+
+        self.assertFalse(dfs(graph, 'A', path, order, visited))
+
 
 if __name__ == '__main__':
     unittest.main()
