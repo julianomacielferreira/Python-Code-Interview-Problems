@@ -156,7 +156,7 @@ def course_schedule(n, prerequisites):
     visited = set()
     path = set()
 
-    dfs = lambda course: (
+    dfs_fn = lambda course: (
         False if course in path else
         True if course in visited else
         all(dfs(neighbor) for neighbor in graph[course]) and
@@ -164,6 +164,6 @@ def course_schedule(n, prerequisites):
     )
 
     for course in range(n):
-        if course not in visited and not dfs(course):
+        if course not in visited and not dfs_fn(course):
             return False
     return True
