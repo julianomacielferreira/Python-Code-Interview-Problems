@@ -61,7 +61,7 @@ def dfs(graph, vertex, path, order, visited):
         if neighbor in path:
             return False
         if neighbor not in visited:
-            visited.add(vertex)
+            visited.add(neighbor)
             if not dfs(graph, neighbor, path, order, visited):
                 return False
 
@@ -118,3 +118,63 @@ def topological_sort(graph):
             dfs(graph, vertex, path, order, visited)
 
     return order[::-1]
+
+
+def course_schedule(n, prerequisites):
+    """
+    Determine if it's possible to finish all courses based on the given prerequisites.
+
+    This function uses a depth-first search (DFS) approach to detect cycles in a graph.
+    If a cycle is detected, it means that there is no valid order to finish all courses,
+    and the function returns False. Otherwise, it returns True.
+
+    Args:
+        n (int): The number of courses
+        prerequisites (list): A list of pairs where the first element is the course and the second element is its
+                              prerequisite.
+
+    Returns:
+        bool: True if it's possible to finish all courses, False otherwise.
+
+    Notes:
+        This function assumes that the courses are numbered from 0 to n-1.
+
+    Time complexity:
+        O(n + m), where n is the number of courses and m is the number of prerequisites.
+
+    Example:
+      >>> course_schedule(2, [[1, 0]])
+      True
+      >>> course_schedule(2, [[1, 0], [0, 1]])
+      False
+    """
+    graph = [[] for i in range(n)]
+
+    for pre in prerequisites:
+        graph[pre[1]].append(pre[0])
+
+    visited = set()
+    path = set()
+
+    def dfs(course):
+
+        if course in path:
+            return False
+
+        if course in visited:
+            return True
+        visited.add(course)
+        path.add(course)
+
+        for neighbor in graph[course]:
+            if not dfs(neighbor):
+                return False
+
+        path.remove(course)
+
+        return True
+
+    for course in range(n):
+        if not dfs(course):
+            return False
+    return True

@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 import unittest
-from course_schedule_v3 import dfs
+from course_schedule_v3 import dfs, course_schedule
 
 
 class DFSTestCase(unittest.TestCase):
@@ -98,6 +98,14 @@ class DFSTestCase(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             dfs(graph, 'A', path, order, visited)
+
+
+class CourseScheduleTestCase(unittest.TestCase):
+    def test_valid_schedule(self):
+        n = 2
+        prerequisite = [[1, 0]]
+
+        self.assertTrue(course_schedule(n, prerequisite))
 
 
 if __name__ == '__main__':
