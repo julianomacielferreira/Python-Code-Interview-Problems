@@ -221,3 +221,37 @@ to the nodes at the next depth level. It uses a queue data structure to keep tra
    - If the node has not been visited before, mark it as visited and process it.
    - Enqueue all the unvisited neighbors of the node.
 5. Repeat the step 4 until the queue is empty.
+
+An implementation of the algorithm:
+
+```python
+from collections import deque
+
+
+def bfs(graph, start):
+    """
+    Performs a breadth-first search (BFS) traversal of the graph starting from the given node.
+
+    Args:
+        graph: A dictionary representing the graph, where each key is a node and its corresponding value
+                is a list of its neighbors.
+        start: The node to start the traversal from.
+
+    Returns:
+        A list of nodes in the order they were visited.
+    """
+    visited = set()
+    queue = deque([start])
+    visited_order = []
+
+    while queue:
+        node = queue.popleft()
+
+        if node not in visited:
+            visited.add(node)
+            visited_order.append(node)
+
+            queue.extend(neighbor for neighbor in graph[node] if neighbor not in visited)
+
+    return visited_order
+```
