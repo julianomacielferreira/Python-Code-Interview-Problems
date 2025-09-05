@@ -42,6 +42,19 @@ class BFSTestCase(unittest.TestCase):
 
         self.assertEqual(bfs(graph, start_node), expected_output)
 
+    def test_bfs_disconnected_graph(self):
+        graph = {
+            'A': ['B'],
+            'B': ['A'],
+            'C': ['D'],
+            'D': ['C']
+        }
+
+        start_node = 'A'
+        expected_output = ['A', 'B']
+
+        self.assertEqual(bfs(graph, start_node), expected_output)
+
 
 if __name__ == '__main__':
     unittest.main()
