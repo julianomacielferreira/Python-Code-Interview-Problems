@@ -205,3 +205,19 @@ class Graph:
 
         return topological_order
 ```
+
+**Breadth-first Search (BFS) Algorithm**
+
+Breadth-first Search is a graph traversal algorithm that explores all nodes at the current depth level before moving on
+to the nodes at the next depth level. It uses a queue data structure to keep track of the nodes to be visited.
+
+**How BFS works**
+
+1. Choose a starting node (also called the root node) in the graph.
+2. Create a queue and enqueue the starting node.
+3. Create a set to keep track of visited nodes.
+4. While the queue is not empty:
+   - Dequeue a node from the queue.
+   - If the node has not been visited before, mark it as visited and process it.
+   - Enqueue all the unvisited neighbors of the node.
+5. Repeat the step 4 until the queue is empty.
