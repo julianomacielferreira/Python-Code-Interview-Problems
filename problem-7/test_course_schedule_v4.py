@@ -67,6 +67,13 @@ class BFSTestCase(unittest.TestCase):
 
         self.assertEqual(bfs(graph, start_node), expected_output)
 
+    def test_bfs_empty_graph(self):
+        graph = {}
+        start_node = 'A'
+
+        with self.assertRaises(KeyError):
+            bfs(graph, start_node)
+
 
 if __name__ == '__main__':
     unittest.main()
