@@ -74,6 +74,21 @@ class BFSTestCase(unittest.TestCase):
         with self.assertRaises(KeyError):
             bfs(graph, start_node)
 
+    def test_bfs_invalid_start_node(self):
+        graph = {
+            'A': ['B', 'C'],
+            'B': ['D', 'E'],
+            'C': ['F'],
+            'D': [],
+            'E': ['F'],
+            'F': [],
+        }
+
+        start_node = 'G'
+
+        with self.assertRaises(KeyError):
+            bfs(graph, start_node)
+
 
 if __name__ == '__main__':
     unittest.main()
