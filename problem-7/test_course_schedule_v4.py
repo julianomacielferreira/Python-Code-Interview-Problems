@@ -55,6 +55,18 @@ class BFSTestCase(unittest.TestCase):
 
         self.assertEqual(bfs(graph, start_node), expected_output)
 
+    def test_bfs_cyclic_graph(self):
+        graph = {
+            'A': ['B'],
+            'B': ['C'],
+            'C': ['A']
+        }
+
+        start_node = 'A'
+        expected_output = ['A', 'B', 'C']
+
+        self.assertEqual(bfs(graph, start_node), expected_output)
+
 
 if __name__ == '__main__':
     unittest.main()
