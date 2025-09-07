@@ -66,7 +66,16 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 │   ├── test_gas_station_problem_v1.py
 │   └── test_gas_station_problem_v2.py
 ├── problem-7
-│   └── README.md
+│   ├── course_schedule_v1.py
+│   ├── course_schedule_v2.py
+│   ├── course_schedule_v3.py
+│   ├── course_schedule_v4.py
+│   ├── __pycache__
+│   ├── README.md
+│   ├── test_course_schedule_v1.py
+│   ├── test_course_schedule_v2.py
+│   ├── test_course_schedule_v3.py
+│   └── test_course_schedule_v4.py
 ├── problem-8
 │   └── README.md
 ├── problem-9
@@ -74,7 +83,8 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 ├── README.md
 ├── requirements.txt
 └── static
-    ├── course-schedule.png
+    ├── course-schedule-impossible.png
+    ├── course-schedule-possible.png
     ├── gas-station-case-1.png
     ├── gas-station-case-2.png
     ├── gas-station-problem.png
@@ -82,6 +92,7 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
     ├── symmetric-tree.png
     ├── un-symmetric-tree.png
     └── video.jpg
+
 
 ```
 
