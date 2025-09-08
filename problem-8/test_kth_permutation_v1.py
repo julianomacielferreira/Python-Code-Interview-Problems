@@ -65,6 +65,12 @@ class KthPermutationTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             kth_permutation(n, k)
 
+    def test_n_1(self):
+        n = 1
+        k = 1
+
+        self.assertEqual(kth_permutation(n, k), '1')
+
 
 if __name__ == '__main__':
     unittest.main()
