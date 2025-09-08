@@ -67,13 +67,19 @@ def course_schedule(n, prerequisites):
     Returns:
         list: A valid ordering of courses as a topological sort if one exists,
                 otherwise, an empty list indicating no valid order (cycle is detected).
-    """
-    graph = [[] for i in range(n)]
-    indegree = [0 for i in range(n)]
 
-    for pre in prerequisites:
-        graph[pre[1]].append(pre[0])
-        indegree[pre[0]] += 1
+    Example:
+        >>> n = 4
+        >>> prerequisites = [[0, 1], [1, 2], [2, 3]]
+        >>> course_schedule(n, prerequisites)
+        [3, 2, 1, 0] # One possible valid order
+    """
+    graph = [[] for _ in range(n)]
+    indegree = [0] * n
+
+    for course, pre in prerequisites:
+        graph[pre].append(course)
+        indegree[course] += 1
 
     order = []
     queue = deque([i for i in range(n) if indegree[i] == 0])
@@ -87,5 +93,9 @@ def course_schedule(n, prerequisites):
 
             if indegree[neighbor] == 0:
                 queue.append(neighbor)
+
+    # Check if all nodes were visited
+    if len(order) != n:
+        return []  # Cycle detected, no valid ordering
 
     return order
