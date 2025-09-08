@@ -43,4 +43,8 @@ def kth_permutation(n, k):
         '132'
     """
     permutations = list(itertools.permutations(range(1, n + 1)))
+
+    if k < 1 or k > len(permutations):
+        raise ValueError(f"k={k} out of range for n={n} (1 to {len(permutations)})")
+
     return ''.join(map(str, permutations[k - 1]))

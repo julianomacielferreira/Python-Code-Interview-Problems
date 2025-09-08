@@ -51,6 +51,12 @@ class KthPermutationTestCase(unittest.TestCase):
 
         self.assertEqual(kth_permutation(n, k), '321')
 
+    def test_k_out_of_range_low(self):
+        n = 3
+        k = 0
+
+        with self.assertRaises(ValueError):
+            kth_permutation(n, k)
 
 if __name__ == '__main__':
     unittest.main()
