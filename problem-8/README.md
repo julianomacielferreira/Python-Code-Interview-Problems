@@ -9,7 +9,8 @@ For example:
 
 ![](../static/kth-permutation-example.png)
 
-A first solution not efficient for large values of n:
+A first solution not efficient for large values of n, 
+generating all permutations is impractical due to the factorial growth (n! permutations):
 
 ```python
 import itertools
