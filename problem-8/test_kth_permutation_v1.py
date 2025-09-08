@@ -39,6 +39,12 @@ class KthPermutationTestCase(unittest.TestCase):
         self.assertEqual(result, expected)
         self.assertEqual(kth_permutation(3, 2), '132')
 
+    def test_first_permutation(self):
+        n = 3
+        k = 1
+
+        self.assertEqual(kth_permutation(n, k), '123')
+
 
 if __name__ == '__main__':
     unittest.main()
