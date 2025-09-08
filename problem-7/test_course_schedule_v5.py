@@ -23,7 +23,7 @@ THE SOFTWARE.
 """
 import unittest
 
-from course_schedule_v4 import course_schedule
+from course_schedule_v5 import course_schedule
 
 
 class CourseScheduleTestCase(unittest.TestCase):
