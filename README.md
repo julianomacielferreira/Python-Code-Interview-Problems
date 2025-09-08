@@ -71,12 +71,14 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 │   ├── course_schedule_v2.py
 │   ├── course_schedule_v3.py
 │   ├── course_schedule_v4.py
+│   ├── course_schedule_v5.py
 │   ├── __pycache__
 │   ├── README.md
 │   ├── test_course_schedule_v1.py
 │   ├── test_course_schedule_v2.py
 │   ├── test_course_schedule_v3.py
-│   └── test_course_schedule_v4.py
+│   ├── test_course_schedule_v4.py
+│   └── test_course_schedule_v5.py
 ├── problem-8
 │   └── README.md
 ├── problem-9
@@ -90,10 +92,10 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
     ├── gas-station-case-2.png
     ├── gas-station-problem.png
     ├── generate-parentheses.png
+    ├── kth-permutation.png
     ├── symmetric-tree.png
     ├── un-symmetric-tree.png
     └── video.jpg
-
 
 ```
 
