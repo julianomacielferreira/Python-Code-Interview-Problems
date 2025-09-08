@@ -50,3 +50,42 @@ def bfs(graph, start):
             queue.extend(neighbor for neighbor in graph[node] if neighbor not in visited)
 
     return visited_order
+
+
+def course_schedule(n, prerequisites):
+    """
+    Determines a valid order of courses given the number of courses and prerequisites.
+
+    This functions implements Khan's algorithm for topological sorting, suitable for
+    directed acyclic graphs (DAGs). Detects if a valid order exists.
+
+    Args:
+        n (int): The number of courses, labeled from 0 to n-1.
+        prerequisites (lists of lists): Each inner list is [course, prerequisite],
+                                        indicating the course depends on the prerequisite.
+
+    Returns:
+        list: A valid ordering of courses as a topological sort if one exists,
+                otherwise, an empty list indicating no valid order (cycle is detected).
+    """
+    graph = [[] for i in range(n)]
+    indegree = [0 for i in range(n)]
+
+    for pre in prerequisites:
+        graph[pre[1]].append(pre[0])
+        indegree[pre[0]] += 1
+
+    order = []
+    queue = deque([i for i in range(n) if indegree[i] == 0])
+
+    while queue:
+        vertex = queue.popleft()
+        order.append(vertex)
+
+        for neighbor in graph[vertex]:
+            indegree[neighbor] -= 1
+
+            if indegree[neighbor] == 0:
+                queue.append(neighbor)
+
+    return order
