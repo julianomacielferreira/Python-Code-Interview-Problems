@@ -58,5 +58,13 @@ class KthPermutationTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             kth_permutation(n, k)
 
+    def test_k_out_of_range_high(self):
+        n = 3
+        k = 7  # beyond 3! = 6
+
+        with self.assertRaises(ValueError):
+            kth_permutation(n, k)
+
+
 if __name__ == '__main__':
     unittest.main()
