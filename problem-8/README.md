@@ -93,3 +93,8 @@ without needing to generate all possible permutations, which is especially impor
 **Naive approach:** Generating all ``n!`` permutations and picking the k-th is impractical for large ``n``.
 **Efficient algorithm:** Computes the permutation without enumerating all, allowing handling large ``n`` 
 (mainly limited by numerical precision and memory for very large ``n``) 
+
+#### Example of a naive approach limitation
+
+- ``n=15``: ``15! = 1.3 x 10^12`` permutations. Generating all is infeasible.
+- With the efficient algorithm, the k-th permutation is computed with operations proportional to ``n``, not ``n!``.
