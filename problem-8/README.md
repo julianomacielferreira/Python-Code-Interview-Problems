@@ -83,4 +83,7 @@ without needing to generate all possible permutations, which is especially impor
 
 #### Reasons for efficiency
 
-1. **Avoids generating all permutations:** The number of permutations of ``n`` elements in ``n!`` (factorial), which grows extremely rapidly. For ``n=20``, ``n!`` is a huge number ( $\gt$ 2 $\times$ 10<sup>18</sup>)
+1. **Avoids generating all permutations:** The number of permutations of ``n`` elements in ``n!`` (factorial), which grows extremely rapidly. For ``n=20``, ``n!`` is a huge number ( $\gt$ 2 $\times$ 10<sup>18</sup>).
+2. **Direct computation:** The algorithm uses properties of factorials to determine the k-th permutation directly, position by position.
+3. **Complexity:** The algorithm has O(n) complexity, as it iterates ``n`` times to construct the permutation.
+4. **Use of factorials:** The division of ``k // fact`` helps identify the next element in the sequence, allowing incremental construction.
