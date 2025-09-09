@@ -87,3 +87,9 @@ without needing to generate all possible permutations, which is especially impor
 2. **Direct computation:** The algorithm uses properties of factorials to determine the k-th permutation directly, position by position.
 3. **Complexity:** The algorithm has O(n) complexity, as it iterates ``n`` times to construct the permutation.
 4. **Use of factorials:** The division of ``k // fact`` helps identify the next element in the sequence, allowing incremental construction.
+
+#### Contrast with naive approach 
+
+**Naive approach:** Generating all ``n!`` permutations and picking the k-th is impractical for large ``n``.
+**Efficient algorithm:** Computes the permutation without enumerating all, allowing handling large ``n`` 
+(mainly limited by numerical precision and memory for very large ``n``) 
