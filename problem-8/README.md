@@ -77,3 +77,10 @@ def kth_permutation(n, k):
 
     return ''.join(map(str, result))
 ```
+
+The operation ``index = k // fact`` is a crucial part of the algorithm that efficiently computes the k-th permutation
+without needing to generate all possible permutations, which is especially important for large values of ``n``.
+
+#### Reasons for efficiency
+
+1. **Avoids generating all permutations:** The number of permutations of ``n`` elements in ``n!`` (factorial), which grows extremely rapidly. For ``n=20``, ``n!`` is a huge number ( $\gt$ 2 $\times$ 10<sup>18</sup>)
