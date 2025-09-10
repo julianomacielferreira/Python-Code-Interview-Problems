@@ -127,3 +127,10 @@ k is the permutation 3 of this group of 6 (k % part_length = 15 % 6 = 3) $\impli
 ``n`` became 3 and ``n!`` became 6 $\implies$ part_length becomes 2 ($n! \div n = 6 \div 3 = 2$)
 
 We remove 3 from unused elements.
+
+0. 3124
+1. 3142
+2. 3214
+3. 3241
+4. 3412
+5. 3421
