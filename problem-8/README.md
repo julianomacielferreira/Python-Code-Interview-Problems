@@ -134,3 +134,5 @@ We remove 3 from unused elements.
 3. 3241
 4. 3412
 5. 3421
+
+![](../static/kth-permutation-group.png)
