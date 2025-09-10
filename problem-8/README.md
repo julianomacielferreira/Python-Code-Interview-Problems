@@ -117,3 +117,13 @@ $\lfloor{k \div length}\rfloor = \lfloor{15 \div 6}\rfloor = 2 \implies$ the kth
 |  [1, 2, 3, 4]   |
 |   permutation   |
 |        3        |
+
+We have one less permutation element to search $\implies$ we decrement n, it becomes 3 
+
+k is the permutation 3 of this group of 6 (k % part_length = 15 % 6 = 3) $\implies$ we search for permutation 3 now 
+
+``n`` became 3 $\implies$ n! became 6 (n! = 3! = 6)
+
+``n`` became 3 and ``n!`` became 6 $\implies$ part_length becomes 2 ($n! \div n = 6 \div 3 = 2$)
+
+We remove 3 from unused elements.
