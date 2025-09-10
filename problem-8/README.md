@@ -73,7 +73,7 @@ def kth_permutation(n, k):
         index = k // fact
         k %= fact
         result.append(nums[index])
-        nums.pop()
+        nums.pop(index)
 
     return ''.join(map(str, result))
 ```
