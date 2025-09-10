@@ -98,3 +98,22 @@ without needing to generate all possible permutations, which is especially impor
 
 - ``n=15``: ``15! = 1.3 x 10^12`` permutations. Generating all is infeasible.
 - With the efficient algorithm, the k-th permutation is computed with operations proportional to ``n``, not ``n!``.
+
+For example, with ``n = 4`` and ``k = 16`` (15 by starting from 0)
+
+We have 24 permutations ($4! = 4 \times 3 \times 2 \times 1$ ) divided into 4 parts $\implies$ the length of a part is 6
+($24 \div 4$)
+
+$\lfloor{k \div length}\rfloor = \lfloor{15 \div 6}\rfloor = 2 \implies$ the kth permutation is in part 2
+
+|        n        |      k      | 
+|:---------------:|:-----------:|
+|        4        |     15      |
+|       n!        | part_length |
+|       24        |      6      |
+
+| unused elements |
+|:---------------:|
+|  [1, 2, 3, 4]   |
+|   permutation   |
+|        3        |
