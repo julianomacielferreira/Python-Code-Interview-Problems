@@ -80,7 +80,12 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
 │   ├── test_course_schedule_v4.py
 │   └── test_course_schedule_v5.py
 ├── problem-8
-│   └── README.md
+│   ├── kth_permutation_v1.py
+│   ├── kth_permutation_v2.py
+│   ├── __pycache__
+│   ├── README.md
+│   ├── test_kth_permutation_v1.py
+│   └── test_kth_permutation_v2.py
 ├── problem-9
 │   └── README.md
 ├── README.md
@@ -92,11 +97,12 @@ Python Code Interview Questions and Solutions based on the tutorial [Solve 10 Co
     ├── gas-station-case-2.png
     ├── gas-station-problem.png
     ├── generate-parentheses.png
+    ├── kth-permutation-example.png
+    ├── kth-permutation-group.png
     ├── kth-permutation.png
     ├── symmetric-tree.png
     ├── un-symmetric-tree.png
     └── video.jpg
-
 ```
 
 ## References
