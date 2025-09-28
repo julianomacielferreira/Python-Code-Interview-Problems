@@ -1,45 +1,37 @@
-## Minimum window substring
+"""
+The MIT License
 
-Given two strings ``s`` and ``t``, find the shortest substring of ``s`` that contains all characters of ``t``.
+Copyright 2025 Juliano Maciel.
 
-![](../static/minimum-window-substring.png)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-#### Example use cases
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
-1. **Text Search**: Can be used in text substring search applications to find the smallest substring of a document tha contains all the search terms.
-2. **Data Compression**: Can be used in data compression applications to find the smallest substring of a string that contains all the required characters.
-
-For example, with the input:
-
-**s** = "ADCFEBECEABEBADFCDFCBFCBEAD"
-
-**t** = "ABCA"
-
-And the output:
-
-**output**: "CEABEBA"
-
-#### Explanation:
-
-"ADCFEBE<u>CEABEBA</u>DFCDFCBFCBEAD"
-
-**CEABEBA** is the shortest substring of ``s`` that contains all characters of ``t`` (2 'A's, 1 'B', 1 'C')
-
-![](../static/minimum-window-substring-example.png)
-
-An implementation solution:
-
-```python
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+"""
 from collections import Counter
+
 
 def contains_all(freq1, freq2):
     """
     Checks if the frequency of characters in `freq1` is sufficient to cover `freq2`.
-    
+
     Args:
     freq1 (dict): Dictionary with the frequency of characters in the first string.
     freq2 (dict): Dictionary with the frequency of characters in the second string.
-    
+
     Returns:
     bool: True if `freq1` has sufficient frequency to cover `freq2`, False otherwise.
     """
@@ -47,6 +39,7 @@ def contains_all(freq1, freq2):
         if freq1[ch] < freq2[ch]:
             return False
     return True
+
 
 def min_window(s, t):
     """
@@ -76,4 +69,3 @@ def min_window(s, t):
                 shortest = sub
 
     return shortest if len(shortest) <= n else ""
-```
