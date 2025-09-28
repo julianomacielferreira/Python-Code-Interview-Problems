@@ -27,7 +27,7 @@ And the output:
 
 ![](../static/minimum-window-substring-example.png)
 
-An implementation solution:
+An implementation of solution not optimized:
 
 ```python
 from collections import Counter
@@ -77,3 +77,9 @@ def min_window(s, t):
 
     return shortest if len(shortest) <= n else ""
 ```
+
+### Complexity 
+
+- Time: The time complexity is O(n^3) due to nested loops and the creation of a ``Counter`` for each substring.
+
+_Improvements_: The ``min_window`` function can be optimized using a sliding window approach, which would reduce the time complexity to O(n).
