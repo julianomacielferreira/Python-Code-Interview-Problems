@@ -32,6 +32,26 @@ class MinWindowSubstringTestCase(unittest.TestCase):
         t = "ABC"
         self.assertEqual(min_window(s, t), "BANC")
 
+    def test_min_window_substring_not_found(self):
+        s = "ABC"
+        t = "DEFG"
+        self.assertEqual(min_window(s, t), "")
+
+    def test_min_window_substring_empty_t(self):
+        s = "ABC"
+        t = ""
+        self.assertEqual(min_window(s, t), "")
+
+    def test_min_window_substring_t_longer_than_s(self):
+        s = "ABC"
+        t = "ABCDE"
+        self.assertEqual(min_window(s, t), "")
+
+    def test_min_window_substring_single_character(self):
+        s = "AAAA"
+        t = "A"
+        self.assertEqual(min_window(s, t), "A")
+
 
 if __name__ == '__main__':
     unittest.main()
